@@ -1,4 +1,4 @@
-## EX-21-POINTERS
+EX-21-POINTERS
 # AIM:
 Write a C program to convert a 23.65 into 25 using pointer
 
@@ -13,38 +13,21 @@ Write a C program to convert a 23.65 into 25 using pointer
 #include <stdio.h>
 
 int main() {
-    double num = 23.65;
-    double *ptr;
-    
-    ptr = &num;
-    
-    *ptr = 25.0;
-    
-    printf("Modified value: %.2f\n", num);
-    
+    double num = 23.65;         
+    double *ptr = &num;          
+    *ptr = 25.0;                
+
+    printf("Modified value: %.2f\n", num);   
+
     return 0;
 }
 ```
 ## OUTPUT:
-![Screenshot 2025-04-28 175030](https://github.com/user-attachments/assets/b1dd378b-f0d8-449d-9f5b-0a83cbe5f800)
- 	
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/f2eef1b4-1597-40d4-a8cb-ec9ef26cb7e5)
 
 ## RESULT:
 Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
  
- 
-
-
 # EX-22-FUNCTIONS AND STORAGE CLASS
 
 ## AIM:
@@ -63,27 +46,25 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 ## PROGRAM:
 ```
 #include <stdio.h>
-
 unsigned long long calculateProduct(int n) {
-    if (n == 1)
+    if (n == 1) {
         return 1;
-    else
-        return n * calculateProduct(n - 1);
+    }
+    return n * calculateProduct(n - 1);  
 }
 
 int main() {
-    int n = 12;
+    int n = 12; 
     unsigned long long product;
-    
-    product = calculateProduct(n);
-    
-    printf("The product of the first 12 natural numbers is: %llu\n", product);
-    
+    product = calculateProduct(n);  
+    printf("The product of the first %d natural numbers is: %llu\n", n, product);
+
     return 0;
 }
 ```
 ## OUTPUT:
-![Screenshot 2025-04-28 175109](https://github.com/user-attachments/assets/aced8750-c318-4007-baf0-dd04264cc42e)
+![image](https://github.com/user-attachments/assets/424ae08e-712d-4cc2-a6b5-67920bf1d23e)
+
          		
 ## RESULT:
 
@@ -140,15 +121,11 @@ int main() {
 
 
 ## OUTPUT
-![Screenshot 2025-04-28 175144](https://github.com/user-attachments/assets/b4b69610-5a2a-4505-b3b1-9e2ff6c546a3)
-
-
- 
- 
+![image](https://github.com/user-attachments/assets/e921f6b7-e0c7-47ff-8a1b-784dabb22a8c)
 
  ## RESULT
  
-
+Thus the program has been executed successfully.
 
 # EX-24-STRINGS
 
@@ -170,30 +147,33 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 #include <string.h>
 
 int main() {
-   char str[100];
-   int num_rows, i, j, len;
-   
-   printf("Enter a string: ");
-   scanf("%s", str);
-   
-   printf("Enter number of rows: ");
-   scanf("%d", &num_rows);
-   
-   len = strlen(str);
-   
-   for(i = 1; i <= num_rows; i++) {
-       for(j = 0; j < len; j++) {
-           printf("%c ", str[j]);
-       }
-       printf("\n");
-   }
-   
-   return 0;
+    char str[100];
+    int num_rows, i, j, k, midpoint;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    printf("Enter number of rows: ");
+    scanf("%d", &num_rows);
+
+    int len = strlen(str);
+    midpoint = (2 * num_rows - 1) / 2;  
+    for (i = 1; i <= num_rows; i++) {
+        for (j = 1; j <= num_rows - i; j++) {
+            printf(" ");
+        }
+        for (k = 0; k < (2 * i - 1); k++) {
+            printf("%c", str[k % len]);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
 }
 ```
 
  ## OUTPUT
-![Screenshot 2025-04-28 175328](https://github.com/user-attachments/assets/2e1bfa7f-7f0b-4ff4-8ba5-be4b81374e09)
+![Screenshot 2025-05-23 180029](https://github.com/user-attachments/assets/07576ad4-8c60-4b6e-969f-2cfb78828ad7)
+
 
  
 
@@ -201,11 +181,6 @@ int main() {
 
 Thus the C program to String process executed successfully
  
-
- 
-
-
-
 
 # EX -25 –DISPLAYING ARRAYS USING POINTERS
 ## AIM
@@ -233,27 +208,31 @@ Step 6: End the program.
 int main() {
     int i, n;
     int arr[10];
-    int *parr = arr;
-    
-    printf("Enter number of elements (max 10): ");
+    int *parr = arr; 
+    printf("Enter the number of elements (max 10): ");
     scanf("%d", &n);
-    
-    printf("Enter %d elements:\n", n);
-    for(i = 0; i < n; i++) {
+
+    if (n > 10 || n < 1) {
+        printf("Invalid number of elements. Please enter between 1 and 10.\n");
+        return 1;
+    }
+    printf("Enter %d integer elements:\n", n);
+    for (i = 0; i < n; i++) {
         scanf("%d", (parr + i));
     }
-    
-    printf("The array elements are:\n");
-    for(i = 0; i < n; i++) {
+
+    printf("You entered:\n");
+    for (i = 0; i < n; i++) {
         printf("%d ", *(parr + i));
     }
-    
+
+    printf("\n");
     return 0;
 }
 ```
 ## OUTPUT
-![Screenshot 2025-04-28 175328](https://github.com/user-attachments/assets/25935cbb-95c8-4cbd-9049-4031e8142d44)
 
+![image](https://github.com/user-attachments/assets/3a64de30-6398-468d-9326-410d247d492a)
  
 
 ## RESULT
