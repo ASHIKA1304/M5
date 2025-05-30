@@ -147,7 +147,8 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
-``!
+```
+
 #include <stdio.h>
 #include <string.h>
 
