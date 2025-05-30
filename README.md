@@ -147,38 +147,29 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
-```
-#include <iostream>
-#include <cstring>  
-using namespace std;
+``!
+#include <stdio.h>
+#include <string.h>
 
 int main() {
     char str[100];
-    scanf("%s", str);  // Input string
+    int num_rows, i, j, k, midpoint;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    printf("Enter number of rows: ");
+    scanf("%d", &num_rows);
 
-    int len = strlen(str); 
-    int sp = 0;             
-    int k = 0;             
-    int y = 0;        
-
-    for (int i = 1; i <= len; i++) {
- 
-        for (int space = 1; space <= sp; space++) {
+    int len = strlen(str);
+    midpoint = (2 * num_rows - 1) / 2;  
+    for (i = 1; i <= num_rows; i++) {
+        for (j = 1; j <= num_rows - i; j++) {
             printf(" ");
         }
-
-     
-        for (int j = 0; j <= y; j++) {
-            if (str[k] == '\0') {
-                k = 0;  
-            }
-            printf("%c ", str[k]);
-            k++;
+        for (k = 0; k < (2 * i - 1); k++) {
+            printf("%c", str[k % len]);
         }
 
         printf("\n");
-        sp -= 1; 
-        y += 2;  
     }
 
     return 0;
@@ -188,8 +179,7 @@ int main() {
 
  ## OUTPUT
  
-![Screenshot 2025-05-30 100123](https://github.com/user-attachments/assets/02894758-11b8-4312-a92e-7842f6322716)
-
+![WhatsApp Image 2025-05-30 at 22 57 20_c99147b1](https://github.com/user-attachments/assets/ff2e0418-5d84-4cbf-9caf-a87e7f81d409)
 
 
 ## RESULT
