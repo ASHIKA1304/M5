@@ -180,7 +180,7 @@ int main() {
 
  ## OUTPUT
  
-![WhatsApp Image 2025-05-30 at 22 57 20_c99147b1](https://github.com/user-attachments/assets/ff2e0418-5d84-4cbf-9caf-a87e7f81d409)
+ ![image](https://github.com/user-attachments/assets/005a6fda-1ab0-4d2c-b131-198dbb748d8e)
 
 
 ## RESULT
